@@ -17,7 +17,11 @@ body {
   grid-auto-rows: 180px;
   gap: 0px;
 }
-
+@media (max-width: 600px) {
+  .grid{
+    grid-template-columns: 1fr;
+  }
+}
 .box {
   background-color: #ddd;
   display: flex;
@@ -46,6 +50,7 @@ body {
 }
 
 .box.logo {
+  max-width:100%;
   background-color: transparent;
   text-align: center;
  }
