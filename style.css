@@ -83,47 +83,60 @@ html, body {
   overflow-x: hidden;
 }
 
-/* ====== 모바일 전용 (600px 이하) ====== */
+/* ====== 모바일 전용 (600px 이하) - 교체할 블록 ====== */
 @media (max-width: 600px) {
+  /* 컨테이너 여백 : 모바일에서 좌우 약간 남기기 */
   .container {
     padding-left: 12px;
     padding-right: 12px;
   }
 
+  /* 2열 그리드 : 모바일에서 2열로 표시 (사라진 박스 포함) */
   .grid {
-    grid-template-columns: 1fr;
-    grid-auto-rows: 180px;
+    grid-template-columns: repeat(2, 1fr);
     gap: 12px;
+    /* grid-auto-rows를 고정하지 않고 aspect-ratio로 각 타일을 제어합니다 */
   }
 
+  /* 모든 박스(타일)를 같은 비율(정사각형)으로 */
   .box {
-    min-height: 0;
-    height: auto;
-    padding: 0;
-    overflow: hidden;
-    font-size: 16px;
-  }
-
-  .box img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-  }
-
-  .box.logo {
+    aspect-ratio: 1 / 1;      /* <- 정사각형. 원하면 1/1 대신 다른 비율로 변경 가능 */
     display: flex;
     justify-content: center;
     align-items: center;
+    overflow: hidden;
     padding: 0;
+    font-size: 16px;
   }
 
+  /* 이미지가 타일을 꽉 채우도록 */
+  .box img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;   /* 비율유지하면서 타일 꽉 채움 / 잘려 보일 수 있음 */
+    display: block;
+  }
+
+  /* 로고박스는 전체 열을 차지(가운데에 로고) */
+  .box.logo {
+    aspect-ratio: auto;      /* 로고는 정사각 고정 하지 않음 */
+    grid-column: 1 / -1;     /* 그리드 전체(2열)를 가로지름 */
+    padding: 18px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  /* 모바일용 로고 크기 */
   .box.logo img {
     width: 260px;
     max-width: 90%;
     height: auto;
     object-fit: contain;
+    display: block;
   }
 
+  /* 컬러 박스(텍스트만 있는 박스) 내부 텍스트 정렬/크기 안정화 */
   .pink, .pink-star, .yellow-star {
     font-size: 18px;
     line-height: 1;
@@ -131,9 +144,11 @@ html, body {
     justify-content: center;
     align-items: center;
   }
+}
 
-  @media (max-width: 380px) {
-    .grid { grid-auto-rows: 150px; }
-    .box.logo img { width: 200px; }
-  }
+/* 아주 작은 화면(예: 380px 이하) 별도 조절 */
+@media (max-width: 380px) {
+  .grid { gap: 8px; }
+  .box.logo img { width: 200px; }
+  /* 필요시 .box { aspect-ratio: 0.95 / 1; } 같은 미세조정 가능 */
 }
