@@ -1,3 +1,4 @@
+/* ====== 데스크탑 기본 스타일 ====== */
 body {
   margin: 0;
   font-family: sans-serif;
@@ -15,13 +16,9 @@ body {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   grid-auto-rows: 180px;
-  gap: 0px;
+  gap: 0;
 }
-@media (max-width: 600px) {
-  .grid{
-    grid-template-columns: 1fr;
-  }
-}
+
 .box {
   background-color: #ddd;
   display: flex;
@@ -38,6 +35,7 @@ body {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  display: block;
 }
 
 .logo {
@@ -50,10 +48,10 @@ body {
 }
 
 .box.logo {
-  max-width:100%;
+  max-width: 100%;
   background-color: transparent;
   text-align: center;
- }
+}
 
 .red { background-color: #a3ffeb; }
 .green { background-color: #ff6083; }
@@ -63,145 +61,77 @@ body {
 .pink-star { background-color: #fbe6ee; color: #f9f4be; font-size: 160px; }
 .yellow-star { background-color: #f9f4bf; color: #c8b9d6; font-size: 160px; }
 
-@media (max-width: 768px) {
-  .grid {
-    grid-template-columns: 1fr 1fr;
-    grid-auto-rows: 150px;
-  }
-  .box.logo {
-  background-color: transparent;
-  text-align: center;
-  }
-  .box.logo img {
-  width: 200px;
-  display: block;
-  margin: 0 auto;
-  }
-}
-
-a.product-link {
-  color: inherit;
-  text-decoration: none;
-}
-
-a.product-link:visited {
-  color: inherit;
-  text-decoration: none;
-}
-
+a.product-link,
+a.product-link:visited,
 a.product-link * {
   color: inherit;
   text-decoration: none;
 }
 
-.price-strike {
-  text-align: right;
-  display: block;
-}
-
+.price-strike,
 .price-ship {
   text-align: right;
   display: block;
 }
 
-/* -------------- 기본 안정화(한 번만 추가) -------------- */
-*,
-*::before,
-*::after {
+/* ====== 공통 안정화 ====== */
+*, *::before, *::after {
   box-sizing: border-box;
 }
 
 html, body {
-  overflow-x: hidden; /* 가로 스크롤/잘림 방지 */
+  overflow-x: hidden;
 }
 
-/* 컨테이너 패딩을 모바일에서 줄여서 좌우 여백 확보 */
-.container {
-  padding-left: 12px;   /* 모바일에서 좌우 공간 주려고 최소값 설정 */
-  padding-right: 12px;
-}
-
-/* -------------- 이미지/박스 기본 (반응형 보장) -------------- */
-.box img {
-  width: 100%;
-  height: auto;         /* 모바일에서는 고정 높이가 아니라 비율 유지 */
-  object-fit: cover;
-  display: block;
-}
-
-/* 로고 박스 기본: (데스크탑에서 span 3 유지) */
-.box.logo {
-  grid-column: 1 / span 3;
-  background-color: transparent;
-  text-align: center;
-  padding: 30px 0;
-}
-
-/* 로고 이미지 기본(데스크탑) */
-.box.logo img {
-  width: 320px;
-  max-width: 90%;
-  height: auto;
-  display: inline-block;
-}
-
-/* === 모바일용: 모든 박스 동일한 높이로 고정(타일형) === */
+/* ====== 모바일 전용 (600px 이하) ====== */
 @media (max-width: 600px) {
-  /* 1열로 변경 */
+  .container {
+    padding-left: 12px;
+    padding-right: 12px;
+  }
+
   .grid {
     grid-template-columns: 1fr;
-    grid-auto-rows: 180px;  /* <-- 여기 숫자를 바꿔 전체 타일 높이 조절 */
+    grid-auto-rows: 180px;
     gap: 12px;
   }
 
-  /* 모든 박스(타일) 모양 통일 */
   .box {
     min-height: 0;
-    height: auto;     /* grid-auto-rows가 높이 결정 */
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    height: auto;
     padding: 0;
-    overflow: hidden; /* 내부가 넘치지 않게 */
+    overflow: hidden;
+    font-size: 16px;
   }
 
-  /* 이미지가 타일을 꽉 채우도록 */
   .box img {
     width: 100%;
     height: 100%;
-    object-fit: cover; /* 이미지 비율 유지하면서 타일 꽉 채움 */
-    display: block;
+    object-fit: cover;
   }
 
-  /* 로고 타일은 내용 중앙에 고정 크기 로고보이게 처리 */
   .box.logo {
-    /* 로고도 타일 높이에 맞게 중앙 정렬 (원하면 logo타일 높이만 다르게 할 수 있음) */
     display: flex;
     justify-content: center;
     align-items: center;
     padding: 0;
   }
+
   .box.logo img {
-    width: 260px;        /* 모바일에서 로고 크기 고정값: 필요시 조절 */
+    width: 260px;
     max-width: 90%;
     height: auto;
     object-fit: contain;
-    display: block;
   }
 
-  /* 컬러박스처럼 텍스트만 있는 박스는 텍스트 크기 줄이기 */
   .pink, .pink-star, .yellow-star {
-    font-size: 18px;      /* 너무 큰 글꼴이 타일을 키우는 걸 막음 */
+    font-size: 18px;
     line-height: 1;
     display: flex;
     justify-content: center;
     align-items: center;
   }
 
-  /* 혹시 텍스트 기본 크기 조절 */
-  .box { font-size: 16px; }
-
-  /* 아주 작은 화면 조정 */
   @media (max-width: 380px) {
     .grid { grid-auto-rows: 150px; }
     .box.logo img { width: 200px; }
