@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>contact Page</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background-color: #a4f3ff;
+      position: relative;
+    }
+
+    .background-img {
+        width:100%;
+        height: auto;
+        display:block;
+    }
+
+    .logo-link{
+        position: absolute;
+        top: 20px;
+        left: 50%;
+        transform: translateX(-50%);
+        z-index: 10;
+    }
+
+    .logo-link img {
+        width: 300px;
+        height: auto;
+    }
+
+    .top-text {
+      position: absolute;
+      top: 30px;
+      left: 30px;
+      font-size: 20px;
+      font-weight: bold;
+    }
+
+    .top-text::before {
+      content: "+";
+      margin-right: 10px;
+      font-size: 30px;
+    }
+
+    .buy-box {
+  display: flex;
+}
+
+.dm-text {
+  font-size: 17px;
+  color: #000000;
+  margin-top: 12px;
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+.purchase-btn {
+    padding: 35px 76px;
+    background-color: #ffffff;
+    color: #000000;
+    font-size: 20px;
+    font-weight: bold;
+    border: 2px solid #ffffff;
+    border-radius: 8px;
+    cursor: pointer;
+    text-decoration: none;
+    margin-left: 0; /* 왼쪽 여백 줄임 */
+    margin-top: 200px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.purchase-btn:hover {
+  background-color: #75d4fa;
+  
+}
+.floating-img {
+  position: fixed;
+  bottom: 20px;
+  right: 1370px;
+  width: 260px;
+  height: auto;
+  z-index: 1000;
+  opacity: 0.9;
+}
+
+  </style>
+</head>
+<body>
+  <a href="index.html" class="logo-link">
+    <img src="images/cotologo.gif" alt="Go to Home" />
+  </a>  
+
+  <!-- 상단 텍스트 -->
+  <div class="top-text">contact</div>
+
+  <!-- 버튼박스추가-->
+     <!-- 구매 버튼 및 텍스트 -->
+
+<!-- 구매하기 버튼: 더 아래쪽, 더 왼쪽 -->
+ <div>
+<a href="https://www.instagram.com/direct/t/17842785120480208" target="_blank">
+  <button class="purchase-btn" style="margin-left: 870px; margin-top: 470px;">contact DM</button>
+</a>
+  <p class="dm-text" style="margin: 18px 0 30px 100px;">you can only contact to dm 。。<br>
+(cuz im earth baby im not businessperson)</p>
+</div>
+
+<img src="images/ail.png" alt="floating image" class="floating-img" />
+
+</body>
+</html>

@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>contact Page</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background-color: #ffa4d5;
+      position: relative;
+    }
+
+    .background-img {
+        width:100%;
+        height: auto;
+        display:block;
+    }
+
+    .logo-link{
+        position: absolute;
+        top: 20px;
+        left: 50%;
+        transform: translateX(-50%);
+        z-index: 10;
+    }
+
+    .logo-link img {
+        width: 300px;
+        height: auto;
+    }
+
+    .top-text {
+      position: absolute;
+      top: 30px;
+      left: 30px;
+      font-size: 20px;
+      font-weight: bold;
+      color:#ffffff;
+    }
+
+    .top-text::before {
+      content: "+";
+      margin-right: 10px;
+      font-size: 30px;
+    }
+
+    .full-img {
+        position:absolute;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        object-fit:cover;
+        z-index: -1;
+    }
+
+    .overlay-img {
+        position: absolute;
+        border-radius: 4px;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+        z-index: 10;
+    }
+
+     /* 🔽 좌우 버튼 스타일 */
+    .arrow-button {
+      position: fixed;
+      bottom: 30px;
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      background-color: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+      cursor: pointer;
+      z-index: 20;
+      transition: transform 0.2s ease;
+    }
+
+    .arrow-button:hover {
+      transform: scale(1.1);
+    }
+
+    .arrow-left {
+      left: 110px;
+    }
+
+    .arrow-right {
+      right: 110px;
+    }
+
+    .arrow {
+      display: inline-block;
+      width: 16px;
+      height: 16px;
+      border: solid #ffa4d5;
+      border-width: 0 6px 6px 0;
+      padding: 4px;
+    }
+
+    .left-arrow-icon {
+      transform: rotate(135deg);
+    }
+
+    .right-arrow-icon {
+      transform: rotate(-45deg);
+    }
+
+
+
+
+
+  </style>
+</head>
+<body>
+  <a href="index.html" class="logo-link">
+    <img src="images/cotologo.gif" alt="Go to Home" />
+  </a>  
+
+  <!-- 상단 텍스트 -->
+  <div class="top-text">Images</div>
+
+
+  <img src="images/book-img7.jpeg" alt="book image" class="full-img" />
+
+  <!-- 🔽 왼쪽 화살표 버튼 -->
+  <div class="arrow-button arrow-left" onclick="location.href='images6.html'">
+    <i class="arrow left-arrow-icon"></i>
+  </div>
+
+  <!-- 🔽 오른쪽 화살표 버튼 -->
+  <div class="arrow-button arrow-right" onclick="location.href='images8.html'">
+    <i class="arrow right-arrow-icon"></i>
+  </div>
+
+</body>
+</html>

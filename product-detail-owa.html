@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Product Detail</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    body {
+      margin: 0;
+      background-color: #ff6083;
+      font-family: 'Arial', sans-serif;
+      color: white;
+      text-align: center;
+    }
+
+   .logo-link {
+        position: absolute;
+        top: 20px;
+        left: 50%;
+        transform: translateX(-50%);
+        z-index: 10;
+    }
+
+    .logo-link img {
+        width: 300px;
+        height: auto;
+    }
+
+    .product-link {
+      position: absolute;
+      top: 170px;
+      left: 400px;
+      font-size: 19px;
+      font-weight: bold;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .product-link::before {
+      content: "+";
+      margin-right: 10px;
+      font-size: 30px;
+    }
+
+    .product-info {
+      position: relative;
+      margin-top: 380px;
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      gap: 50px;
+      flex-wrap: wrap;
+    }
+
+    .product-info img {
+      width: 500px;
+      height: auto;
+      border-radius: 5px;
+    }
+
+    .info-text {
+      text-align: left;
+      max-width: 270px;
+      font-size: 15px;
+    }
+
+    .info-text b {
+      font-size: 23px;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    .details {
+      margin-top: 320px;
+      margin-bottom: 290px;
+      text-align: center;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .details img {
+      display: block;
+      width: 450px;
+      margin-left:auto;
+      margin-right: auto;
+    }
+    
+
+   .shipping-refund {
+  background-color: #ff6083;
+  color: white;
+  padding: 60px 200px;
+  font-family: 'Pretendard', sans-serif;
+  font-size: 15px;
+  line-height: 1.8;
+  text-align: left;
+}
+
+.shipping-refund .section {
+  margin-bottom: 50px;
+}
+
+.shipping-refund h2 {
+  font-size: 22px;
+  letter-spacing: 1.5px;
+  margin-bottom: 20px;
+  font-family: 'Orbitron', sans-serif;
+}
+
+.shipping-refund p {
+  margin: 8px 0;
+}
+
+.shipping-refund strong {
+  font-weight: bold;
+}
+
+.buy-box {
+  display: flex;
+}
+
+.dm-text {
+  font-size: 13px;
+  color: white;
+  margin-bottom: 5px;
+}
+
+.purchase-btn {
+    padding: 16px 36px;
+    color: #ff6083;
+    font-size: 18px;
+    font-weight: bold;
+    border: 2px solid #ff6083;
+    border-radius: 8px;
+    cursor: pointer;
+    text-decoration: none;
+    margin-left: 0; /* 왼쪽 여백 줄임 */
+    margin-top: 200px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.purchase-btn:hover {
+  background-color: #ff456c;
+  
+}
+  </style>
+</head>
+<body>
+
+  <!-- ✅ 로고 GIF -->
+  <a href="index.html" class="logo-link">
+    <img src="images/cotologo.gif" alt="Go to Home" />
+  </a>
+
+  <!-- ✅ 왼쪽 상단 +product -->
+  <a href="product.html" class="product-link">product</a>
+
+  <!-- ✅ 제품 대표 이미지 + 설명 -->
+  <div class="product-info">
+    <img src="images/owa.jpg" alt="bracelet">
+    <div class="info-text">
+      <b>owa necklace</b><br><br>
+
+      <span class="price-strike">52,000₩</span>
+      <span class="price-ship">배송비 3,000₩</span><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+
+      <span style="color:#ffffff">* Size 41cm + 5 *</span><br>
+      Handmade<br>
+      One and Only
+    </div>
+
+    <!-- 버튼박스추가-->
+     <!-- 구매 버튼 및 텍스트 -->
+    <!-- DM 텍스트: 아래로 내리고, 왼쪽 정렬 -->
+<p class="dm-text" style="margin: 6px 0 30px 100px;">Order via DM only</p>
+
+<!-- 구매하기 버튼: 더 아래쪽, 더 왼쪽 -->
+<a href="https://www.instagram.com/direct/t/17842785120480208" target="_blank">
+  <button class="purchase-btn" style="margin-left: -183px; margin-top: 24px;">구매하기</button>
+</a>
+  </div>
+
+  <!-- ✅ 제품 상세 이미지들 -->
+  <div class="details">
+    <h3>Details</h3>
+    <img src="images/owa2.jpg" alt="detail">
+    <img src="images/owa3.jpg" alt="detail">
+    <img src="images/owa4.jpg" alt="detail">
+    <img src="images/owa5.jpg" alt="detail">
+    <img src="images/owa7.png" alt="detail">
+  </div>
+ 
+  <div class="shipping-refund">
+  <div class="section">
+    <h2>SHIPPING</h2>
+    <p><strong>배송 업체</strong> | 우체국 택배</p>
+    <p><strong>배송 지역</strong> | 대한민국 ( only korea )</p>
+    <p><strong>배송 비용</strong> | 3,000원 / 도서산간 지역 별도 추가 금액 발생</p>
+    <p><strong>배송 기간</strong> | 2-3일 가량 소요 ( 주말 제외 )</p>
+  </div>
+
+  <div class="section">
+    <h2>REFUND</h2>
+    <p><strong>반품 조건</strong> |  
+      - 제품 파손이나 오배송에 의한 반품 접수 가능합니다. ( 반품 비용 판매자 부담)<br>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      - 제품 특성상 단순 변심, 사이즈 미확인으로 인한 교환 / 반품이 불가합니다.
+    </p>
+    <p><strong>반품 접수</strong> | @co.ra.to.ma 다이렉트 메시지로 반품 접수</p>
+  </div>
+</div>
+
+
+  
+
+</body>
+</html>

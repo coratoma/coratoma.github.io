@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Product Page</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background-color: #ff6083; 
+      font-family: 'Arial', sans-serif;
+      color: white;
+    }
+
+    /* 로고 gif */
+    .logo-link {
+        position: absolute;
+        top: 20px;
+        left: 50%;
+        transform: translateX(-50%);
+        z-index: 10;
+    }
+
+    .logo-link img {
+        width: 300px;
+        height: auto;
+    }
+
+    /* 상단 + product */
+    .top-text {
+      position: absolute;
+      top: 30px;
+      left: 30px;
+      font-size: 20px;
+      font-weight: bold;
+    }
+
+    .top-text::before {
+      content: "+";
+      margin-right: 10px;
+      font-size: 30px;
+    }
+
+    /* 제품 갤러리 */
+    .product-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+      gap: 80px 30px;
+      /* 세로간격 60 가로간격 30*/
+      max-width: 900px;
+      margin:  250px auto 100px;
+      padding: 0 20px;
+    }
+
+    .product-item {
+      position: relative;
+      text-align: center;
+    }
+
+    .product-item img {
+      width: 100%;
+      border-radius: 5px;
+    }
+
+    .price {
+      margin-top: 10px;
+      font-size: 14px;
+    }
+
+    /* 동그란 원 프레임들 (각 모서리) */
+    .circle {
+      position: absolute;
+      width: 15px;
+      height: 15px;
+      background-color: white;
+      border-radius: 50%;
+    }
+
+    .circle.tl { top: -7px; left: -7px; }
+    .circle.tr { top: -7px; right: -7px; }
+    .circle.bl { bottom: -7px; left: -7px; }
+    .circle.br { bottom: -7px; right: -7px; }
+
+    .product-item {
+  position: relative;
+}
+
+.sold-out-badge {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  background-color: rgb(252, 56, 56);
+  color: white;
+  font-size: 10px;
+  font-weight: bold;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+}
+  </style>
+</head>
+<body>
+
+  <!-- 로고 gif 클릭 시 홈으로 이동 -->
+  <a href="index.html" class="logo-link">
+    <img src="images/cotologo.gif" alt="Go to Home" />
+  </a>
+
+  <!-- 상단 텍스트 -->
+  <div class="top-text">product</div>
+
+  <!-- 제품 갤러리 -->
+  <div class="product-grid">
+    <!-- 제품 4 -->
+    <a class="product-link" href="product-detail-heidi.html" > 
+    <div class="product-item">
+      <img src="images/heidi.jpg" alt="bracelet">
+      <div class="price">Heidi bracelet<br>40,000₩</div>
+      <div class="circle tl"></div>
+      <div class="circle tr"></div>
+      <div class="circle bl"></div>
+      <div class="circle br"></div>
+    </div>
+    </a>
+
+    <!-- 제품 4 -->
+    <a class="product-link" href="product-detail-peaceo.html" > 
+    <div class="product-item">
+      <img src="images/peaceo.jpg" alt="bracelet">
+      <div class="price">Peace.O bracelet<br>43,000₩</div>
+      <div class="circle tl"></div>
+      <div class="circle tr"></div>
+      <div class="circle bl"></div>
+      <div class="circle br"></div>
+    </div>
+    </a>
+
+    <!-- 제품 4 -->
+    <a class="product-link" href="product-detail-july.html" > 
+    <div class="product-item">
+      <img src="images/july.jpg" alt="bracelet">
+      <div class="price">July two-way bracelet<br>41,000₩</div>
+      <div class="circle tl"></div>
+      <div class="circle tr"></div>
+      <div class="circle bl"></div>
+      <div class="circle br"></div>
+    </div>
+    </a>
+
+  
+
+    <!-- 제품 1 -->
+    <a class="product-link" href="product-detail-angelb.html" > 
+    <div class="product-item">
+      <img src="images/angel.jpg" alt="bracelet">
+      <div class="price">Angel bracelet<br>38,000₩</div>
+      <div class="circle tl"></div>
+      <div class="circle tr"></div>
+      <div class="circle bl"></div>
+      <div class="circle br"></div>
+    </div>
+    </a>
+
+   <!-- 제품 4 -->
+    <a class="product-link" href="product-detail-mota.html" > 
+    <div class="product-item">
+      <img src="images/mota.jpg" alt="bracelet">
+      <div class="price">mota beaded bracelet<br>37,000₩</div>
+      <div class="circle tl"></div>
+      <div class="circle tr"></div>
+      <div class="circle bl"></div>
+      <div class="circle br"></div>
+    </div>
+    </a>
+
+  
+    <!-- 제품 4 -->
+    <a class="product-link" href="product-detail-owa.html" > 
+    <div class="product-item">
+      <img src="images/owa.jpg" alt="bracelet">
+      <div class="price">owa necklace<br>52,000₩</div>
+      <div class="circle tl"></div>
+      <div class="circle tr"></div>
+      <div class="circle bl"></div>
+      <div class="circle br"></div>
+    </div>
+    </a>
+
+
+    <!-- 제품 4 -->
+    <a class="product-link" href="product-detail-mal.html" > 
+    <div class="product-item">
+      <img src="images/mal.jpg" alt="bracelet">
+      <div class="price">말죽거리 목거리<br>17,000₩</div>
+      <div class="circle tl"></div>
+      <div class="circle tr"></div>
+      <div class="circle bl"></div>
+      <div class="circle br"></div>
+    </div>
+    </a>
+
+
+    <!-- 제품 4 -->
+    <a class="product-link" href="product-detail-angelk.html" > 
+    <div class="product-item">
+      <img src="images/angelk.jpg" alt="bracelet">
+      <div class="price">angel keyring<br>11,000₩</div>
+      <div class="circle tl"></div>
+      <div class="circle tr"></div>
+      <div class="circle bl"></div>
+      <div class="circle br"></div>
+    </div>
+    </a>
+
+    <!-- 제품 5 -->
+    <a class="product-link" href="product-detail-dupop.html" > 
+    <div class="product-item">
+      <img src="images/dupop.jpg" alt="bracelet">
+      <div class="sold-out-badge">SOLD OUT</div>
+      <div class="price">Du.p.o.p beaded ring<br>SOLD OUT</div>
+      <div class="circle tl"></div>
+      <div class="circle tr"></div>
+      <div class="circle bl"></div>
+      <div class="circle br"></div>
+    </div>
+    </a>
+
+    <!-- 제품 2~9 도 같은 형식으로 아래 추가 -->
+    <a class="product-link" href="product-detail-kindadizzy.html" >
+    <div class="product-item">
+      <img src="images/kindadizzy.jpg" alt="bracelet">
+      <div class="sold-out-badge">SOLD OUT</div>
+      <div class="price">kindadizzy bracelet<br>SOLD OUT</div>
+      <div class="circle tl"></div>
+      <div class="circle tr"></div>
+      <div class="circle bl"></div>
+      <div class="circle br"></div>
+    </div>
+    </a>
+
+    <!-- 제품 3 -->
+    <a class="product-link" href="product-detail-metaverse.html" >
+      <div class="product-item">
+        <img src="images/boldmetaverse.jpg" alt="bracelet">
+        <div class="sold-out-badge">SOLD OUT</div>
+        <div class="price">Bold metaverse bracelet<br>SOLD OUT</div>
+        <div class="circle tl"></div>
+        <div class="circle tr"></div>
+        <div class="circle bl"></div>
+        <div class="circle br"></div>
+      </div>
+    </a>
+
+
+    <!-- 제품 6 -->
+    <a class="product-link" href="product-detail-ringofpast.html" >
+      <div class="product-item">
+        <img src="images/ringofpast.jpg" alt="bracelet">
+        <div class="sold-out-badge">SOLD OUT</div>
+        <div class="price">ring of past bracelet<br>SOLD OUT</div>
+        <div class="circle tl"></div>
+        <div class="circle tr"></div>
+        <div class="circle bl"></div>
+        <div class="circle br"></div>
+      </div>
+    </a>  
+
+    <!-- 제품 7 -->
+    <a class="product-link" href="product-detail-nirvana.html" >
+    <div class="product-item">
+      <img src="images/nirvana.jpg" alt="bracelet">
+      <div class="sold-out-badge">SOLD OUT</div>
+      <div class="price">Nirvana bracelet<br>SOLD OUT</div>
+      <div class="circle tl"></div>
+      <div class="circle tr"></div>
+      <div class="circle bl"></div>
+      <div class="circle br"></div>
+    </div>
+    </a>
+
+    <!-- 제품 8 -->
+    <a class="product-link" href="product-detail-tooth.html" >
+    <div class="product-item">
+      <img src="images/tooth.jpg" alt="bracelet">
+      <div class="sold-out-badge">SOLD OUT</div>
+      <div class="price">심성복 치아 브레이슬릿<br>SOLD OUT</div>
+      <div class="circle tl"></div>
+      <div class="circle tr"></div>
+      <div class="circle bl"></div>
+      <div class="circle br"></div>
+    </div>
+    </a>
+
+    <!-- 제품 9 -->
+    <a class="product-link" href="product-detail-pegasus.html" >
+    <div class="product-item">
+      <img src="images/pegasus.jpg" alt="bracelet">
+      <div class="sold-out-badge">SOLD OUT</div>
+      <div class="price">Pegasus necklace<br>SOLD OUT</div>
+      <div class="circle tl"></div>
+      <div class="circle tr"></div>
+      <div class="circle bl"></div>
+      <div class="circle br"></div>
+    </div>
+    </a>
+
+    <!-- 생략된 부분: 총 9개까지 복사해서 같은 방식으로 붙여넣기 -->
+  </div>
+
+</body>
+</html>
